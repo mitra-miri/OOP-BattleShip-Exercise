@@ -6,7 +6,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int size = scan.nextInt();
         Game game = new Game(size);
-        gmae.start();
+        game.start();
 
     }
 }
