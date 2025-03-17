@@ -49,48 +49,38 @@ public class Board {
             return true;
         } else {
             return false;
-
+        }
     }
 
-    public void printGrid() {
+    public void printGrid(){
 
-        System.out.print("  ");
-
-        for(char i = 'A'; i <= 'J' ; i++) {
-            System.out.print("  "+i+" ");
+        System.out.print("    ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(i + "   ");
         }
-
         System.out.println();
         System.out.print("  ");
-
-
-        for (int i = 0; i < size ; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.print("+---");
         }
         System.out.println("+");
-
-
         for (int i = 0; i < size; i++) {
-
-            System.out.print("  ");
-
+            System.out.print((char) ('A' + i) + " ");
             for (int j = 0; j < size; j++) {
-                System.out.print("| " +grid[i][j]+ " ");
+                System.out.print("| " + grid[i][j] + " ");
             }
             System.out.println("|");
-
-
             System.out.print("  ");
-
-
-            for (int l = 0; l < size ; l++) {
+            for (int l = 0; l < size; l++) {
                 System.out.print("+---");
             }
             System.out.println("+");
-
-
         }
     }
+    public char[][] getGrid() {
+        return grid;
+    }
+
 
 }
 

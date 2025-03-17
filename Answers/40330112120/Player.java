@@ -1,12 +1,12 @@
 
-public class Player extends Ship {
-
-    private String name;
+public class Player {
+//
+//    private int number;
     private Board playerGride;
     private Board trackingGrid;
 
-    public Player(String name , int boardSize) {
-        this.name = name;
+    public Player( int boardSize) {
+//        this.number = number;
         playerGride = new Board(boardSize);
         trackingGrid = new Board(boardSize);
     }
@@ -14,6 +14,19 @@ public class Player extends Ship {
     public void printTrackingGrid() {
        trackingGrid.printGrid();
     }
+
+    public Board getTrackingGrid() {
+        return trackingGrid;
+    }
+    public Board getPlayerGrid() {
+        return playerGride;
+    }
+
+    public void printPlayerGrid() {
+        playerGride.printGrid();
+    }
+
+
 
 
 
