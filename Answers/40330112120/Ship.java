@@ -10,9 +10,8 @@ public class Ship {
     }
 
 
-    public void setName(char name) {
-        this.name = name;
-    }
+
+
     public char getName() {
         return name;
     }
