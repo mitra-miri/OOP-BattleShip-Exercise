@@ -8,9 +8,9 @@ public class Board {
         initializeGrid(grid);
     }
 
-//    public int getSize() {
-//        return size;
-//    }
+    public int getSize() {
+        return size;
+    }
 
     public void initializeGrid(char[][] grid) {
         for (int i = 0; i < size; i++) {
@@ -20,7 +20,39 @@ public class Board {
         }
     }
 
-    public void printGrid(char[][] grid) {
+    public boolean canplaceShip(Ship ship, int row, int col ,boolean horizontal, int numberOfCell) {
+        if (horizontal) {
+            if (col + numberOfCell > size) return false;
+            for (int j = col; j < col + numberOfCell; ++j) {
+                if (grid[row][j] != '~') return false;
+            }
+        } else {
+            if (row + numberOfCell > size) return false;
+            for (int i = row; i < row + numberOfCell; ++i) {
+                if (grid[i][col] != '~') return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean placeShip(Ship ship,int row, int col, boolean horizontal) {
+        if(canplaceShip(ship,row,col,horizontal, ship.getSize())) {
+            if (horizontal) {
+                for (int j = col; j < col + ship.getSize(); ++j) {
+                    grid[row][j] = ship.getName();
+                }
+            } else {
+                for (int i = row; i < row + ship.getSize(); ++i) {
+                    grid[i][col] = ship.getName();
+                }
+            }
+            return true;
+        } else {
+            return false;
+
+    }
+
+    public void printGrid() {
 
         System.out.print("  ");
 
