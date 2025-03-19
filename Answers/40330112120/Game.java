@@ -6,7 +6,7 @@ public class Game {
 
 
 
-    public void start() {
+    public  void start() {
         boolean playAgain;
         do {
             playGame();
